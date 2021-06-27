@@ -16,7 +16,7 @@ __asel() {
 }
 
 wat-alias-widget() {
-  LBUFFER="${LBUFFER}$(__asel | grep -Po '^.+(?=:)')"
+  LBUFFER="${LBUFFER}$(__asel | grep -Po '^.+(?=:)') "
   local ret=$?
   zle reset-prompt
   return $ret
