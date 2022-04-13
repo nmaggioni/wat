@@ -2,9 +2,12 @@
 
 [![license](https://img.shields.io/github/license/nmaggioni/wat.svg)](LICENSE) [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-How much time did you spend crafting and perfecting that nifty alias that you thought you would use often enough to remember its name, but that in fact you can't quite pinpoint it when you most need it?
+How much time did you spend crafting and perfecting that nifty alias that you thought you would use often enough to remember its name, but that in fact you can't quite pinpoint when you most need it?
 
 Inspired by and relying on [fzf](https://github.com/junegunn/fzf), enter `wat`: _Which Alias To...?_
+
+![Demo](.github/demo.gif)
+![Aliases](.github/aliases.png)
 
 ---
 
