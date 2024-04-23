@@ -30,16 +30,20 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text()
 		if strings.HasPrefix(line, "alias ") {
-			name := nameRegex.FindStringSubmatch(line)
-			description := descriptionRegex.FindStringSubmatch(line)
-			_tags := tagsRegex.FindStringSubmatch(line)
+			nameMatches := nameRegex.FindStringSubmatch(line)
+			descriptionMatches := descriptionRegex.FindStringSubmatch(line)
+			tagsMatches := tagsRegex.FindStringSubmatch(line)
 
-			if validateEntry(name, description, _tags) {
-				tags := strings.Split(_tags[1], ",")
+			if validateEntry(nameMatches, descriptionMatches, tagsMatches) {
+				description := ""
+				if len(descriptionMatches) > 1 {
+					description = fmt.Sprintf("%s ", descriptionMatches[1])
+				}
+				tags := strings.Split(tagsMatches[1], ",")
 				fmt.Printf(
-					"%s: %s [%s]\n",
-					strings.Trim(name[1], " "),
-					strings.Trim(description[1], " "),
+					"%s: %s[%s]\n",
+					strings.Trim(nameMatches[1], " "),
+					strings.Trim(description, " "),
 					strings.Join(tags, ","),
 				)
 			}
