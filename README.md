@@ -30,9 +30,9 @@ You need to have [`fzf`](https://github.com/junegunn/fzf#installation) installed
 ### Shell integration
 
 1. Clone this repo somewhere memorable.
-2. Build the `wat` binary.
-   + With **Docker**: `make docker`
-   + With your local Go toolchain: `make go`
+2. Build the `wat` binary either manually (`go build`) or through the [just](https://github.com/casey/just) task runner.
+   + With **Docker**: `just docker`
+   + With your local Go toolchain: `just go`
 3. Source the hooks script in your `~/.zshrc`:
     ```bash
     (cat << EOF
