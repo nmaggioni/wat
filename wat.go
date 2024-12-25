@@ -40,10 +40,15 @@ func main() {
 					description = fmt.Sprintf("%s ", descriptionMatches[1])
 				}
 				tags := strings.Split(tagsMatches[1], ",")
+				var space string
+				if len(tags) > 0 {
+					space = " "
+				}
 				fmt.Printf(
-					"%s: %s[%s]\n",
+					"%s: %s%s[%s]\n",
 					strings.Trim(nameMatches[1], " "),
 					strings.Trim(description, " "),
+					space,
 					strings.Join(tags, ","),
 				)
 			}
